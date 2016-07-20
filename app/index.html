@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cool Project</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body ng-app="app">
+    <div ng-controller="MessageController" class="container">
+      <form ng-submit="validateMessage(message)">
+        <h2>Contact Us</h2>
+        <label for="name">Name</label>
+        <input 
+            class="sender-error-border"
+            ng-model="message.sender" 
+            id="name" 
+            type="text" 
+            placeholder="Sally Smith">
+
+        <p class="red hidden sender-error">Name cannot be left empty</p>
+
+        <label for="email">Email</label>
+        <input 
+            class="email-error-border" 
+            ng-model="message.email" 
+            id="email" 
+            type="text" 
+            placeholder="ssmith@gmail.com">
+
+        <p class="red hidden email-error">Email must have an '@'</p>
+
+        <label for="website">Website</label>
+        <input 
+          class="website-error-border" 
+          ng-model="message.website" 
+          id="website" 
+          type="text" 
+          placeholder="http://mssmith.net">
+
+        <p class="red hidden website-error">Websites must start with http://</p>
+
+        <label for="message">Message</label>
+        <textarea 
+            class="message-error-border" 
+            ng-model="message.message" 
+            id="message" 
+            type="text" 
+            placeholder="A friendly message..."></textarea>
+
+        <p class="red hidden message-error">Message cannot be left empty</p>        
+
+        <button>Submit</button>
+      </form>
+    </div>
+    <script src="js/bundle.js"></script>
+  </body>
+</html>
