@@ -6,9 +6,10 @@
 **Angular Tools**
 
 * To __gather__ data stored on server
-    ```javascript
+  ```
+  javascript
     $http.get(SERVER.URL, data).then( (res) => {
-        $scope.data = res.data;
+      $scope.data = res.data;
     });
     ```
 * To __send__ data to server
