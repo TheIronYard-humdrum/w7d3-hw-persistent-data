@@ -1,10 +1,10 @@
-import angular from 'angular'
+import angular from 'angular';
 
 // Import Controllers
-import { MessageController } from './controllers/message.controller'
+import { MessageController } from './controllers/message.controller';
 
 // Import App Constants
-import { serverConstant } from './controllers/app.constants'
+import { serverConstant } from './controllers/app.constants';
 
 angular
   .module('app', [])

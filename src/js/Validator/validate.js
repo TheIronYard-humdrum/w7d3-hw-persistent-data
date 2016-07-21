@@ -1,4 +1,4 @@
-import $ from 'jquery'
+import $ from 'jquery';
 
 class Validate {
     constructor (original) {
@@ -7,12 +7,12 @@ class Validate {
       this.email = this.email(original.email);
       this.website = this.website(original.website);
       this.message = this.message(original.message);
-    }
+    };
 
     name(input) {
       if ( input === undefined ) {
         //errored
-        input = false
+        input = false;
         let name = $('.sender-error');
         let nameInput = $('.sender-error-border');
         name.removeClass('hidden');
@@ -25,12 +25,11 @@ class Validate {
         nameInput.removeClass('error-border');
       }
       return input;
-    }
-
+    };
 
     email(input) {
       if ( input === undefined || input.includes('@') === false ) {
-        input = false
+        input = false;
         // errored
         let email = $('.email-error');
         email.removeClass('hidden');
@@ -44,7 +43,7 @@ class Validate {
         emailInput.removeClass('error-border');
       }
       return input;
-    }
+    };
 
     website(input) { 
       if ( input === undefined) {
@@ -66,8 +65,8 @@ class Validate {
         websiteInput.removeClass('error-border');
       }
       return input
-    }
-
+    };
+    
     message(input) {
       if ( input === undefined ) {
         input = false
@@ -84,8 +83,7 @@ class Validate {
         messageInput.removeClass('error-border');
       }
       return input
-    }
+    };
+  };
 
-  }
-
-  export { Validate }
+  export { Validate };
