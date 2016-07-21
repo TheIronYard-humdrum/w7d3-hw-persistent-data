@@ -10,6 +10,7 @@
 $http.get(SERVER.URL, data).then( (res) => {
   $scope.data = res.data;
 });
+```
 
 * To __send__ data to server
 ```javaScript
@@ -17,6 +18,7 @@ $http.post(SERVER.URL, data).then( (res) => {
     $scope.data.push(res.data);
     $scope.message = {};
 });
+```
 
 **Validator**
 
