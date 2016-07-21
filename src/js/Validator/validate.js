@@ -50,6 +50,8 @@ class Validate {
         input = false
       } else if ( input.slice(0,7) !== "http://" ) {
         input = false;
+      } else if ( input.slice(0,8) !== "https://" ) {
+        input = false;
       }
       if ( input === false ) {
         // errored
