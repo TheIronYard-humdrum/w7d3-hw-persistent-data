@@ -18,9 +18,9 @@ function MessageController ($scope, SERVER, $http, MessageService) {
     })
   };
 
-  function deleteMessage(message) {
-    console.log(message)
-  }
+  // function deleteMessage(message) {
+  //   console.log(message)
+  // }
 
   $scope.validateMessage = (original) => {
     let message;
