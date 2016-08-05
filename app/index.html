@@ -6,6 +6,7 @@
     <title>My Cool Project</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   </head>
   <body ng-app="app">
     <div ng-controller="MessageController" class="container">
@@ -62,25 +63,26 @@
           <div class="info">
 <!-- Sender -->
             <p class="sender">
-              <span class="l">Sender:</span>
-              <span class="r">{{message.name}}</span>
+              <span class="t">Sender:</span>
+              <span class="b">{{message.name}}</span>
             </p>
 <!-- Email -->
-            <p class="email">
-              <span class="l">Email:</span>
-              <span class="r">{{message.email}}</span>
-            </p>
-<!-- Website -->
-            <p class="website">
-              <span class="l">Website:</span>
-              <span class="r">{{message.website}}</span>
-            </p>
+            <div class="contact-info">
+            <!-- Website -->
+              <p class="website">
+                <!-- <span class="l">Website:</span> -->
+                {{message.website}}
+              </p>
+              <p class="email">
+                <!-- <span class="l">Email:</span> -->
+                {{message.email}}
+              </p>
+            </div>
           </div>
 <!-- Message -->
-          <p class="message">Message: {{message.message}}</p>
-          <!-- <form ng-submit="deleteMessage(message)">
-            <button>Delete</button>
-          </form> -->
+          <p class="message">{{message.message}}</p>
+          
+          <a ng-click="deleteMessage(message)"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
         </li>
       </ul>
     </div>

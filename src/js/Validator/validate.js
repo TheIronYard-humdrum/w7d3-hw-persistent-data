@@ -50,8 +50,6 @@ class Validate {
       var http = /^https?:\/\//i;
       if ( input === undefined) {
         input = false
-      } else {
-        input = http.test(input);
       }
 
       if ( input === false ) {

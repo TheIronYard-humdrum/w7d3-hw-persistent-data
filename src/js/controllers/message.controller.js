@@ -1,8 +1,8 @@
 import { Validate } from '../Validator/validate';
 
 function MessageController ($scope, SERVER, $http, MessageService) {
-  $scope.messages = [];
-
+  $scope.messages = {};
+  $scope.deleteMessage = deleteMessage;
   init();
 
   function init () {
@@ -10,17 +10,20 @@ function MessageController ($scope, SERVER, $http, MessageService) {
       $scope.messages = res.data;
       console.log($scope.messages)
     });
-  };
+  }
   
   function sendMessage (message) {
     MessageService.sendMessage(message).then( (res) => {
       init();
-    })
-  };
+      $scope.message = {};
+    });
+  }
 
-  // function deleteMessage(message) {
-  //   console.log(message)
-  // }
+  function deleteMessage (message) {
+    MessageService.deleteMessage(message).then( (res) => {
+      init();
+    });
+  }
 
   $scope.validateMessage = (original) => {
     let message;
@@ -36,8 +39,8 @@ function MessageController ($scope, SERVER, $http, MessageService) {
                                       {
       sendMessage(message)
     }
-  };
-};
+  }
+}
 
 MessageController.$inject = ['$scope', 'SERVER', '$http', 'MessageService'];
 

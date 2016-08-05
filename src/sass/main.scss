@@ -56,3 +56,75 @@ form {
 .red {
   color: red;
 }
+
+
+.messages {
+  border: solid black 1px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  .message-item {
+    border: solid black 1px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    position: relative;
+    margin: 10px auto;
+    .info {
+      border: solid black 1px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8em;
+    }
+    .sender {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      letter-spacing: 0.03em;
+      margin: 0 2.5%;
+      .t {
+        margin: 5px 0;
+        color: lighten(black, 40%);
+      }
+      .b {
+        font-size: 1.2em;
+      }
+    }
+    .contact-info {
+      letter-spacing: 0.03em;
+      margin: 0 40px;
+      color: lighten(black, 40%);
+      .email {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0 0 10px 0;
+      }
+      .website {
+        margin: 10px 0 5px 0;
+      }
+    }
+
+    .message {
+      font-size: 0.8em;
+      letter-spacing: 0.03em;
+      margin: 20px 2.5%;
+    }
+
+    i {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      color: black;
+      transition: color 0.2s
+    }
+    .fa-trash-o:hover {
+      color: red;
+    } 
+  }
+}
+
+
+
