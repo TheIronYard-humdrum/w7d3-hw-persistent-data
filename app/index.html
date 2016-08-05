@@ -60,7 +60,7 @@
 
       <ul class="messages">
         <li class="message-item" ng-repeat="message in messages">
-          <div class="info">
+          <div class="info shadow">
 <!-- Sender -->
             <p class="sender">
               <span class="t">Sender:</span>
@@ -80,7 +80,7 @@
             </div>
           </div>
 <!-- Message -->
-          <p class="message">{{message.message}}</p>
+          <p class="message in-shadow">{{message.message}}</p>
           
           <a ng-click="deleteMessage(message)"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
         </li>
