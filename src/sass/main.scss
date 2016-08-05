@@ -4,44 +4,57 @@
   -moz-box-sizing: border-box;
 }
 
+$blue: #0E79B2;
+$darkblue: darken(#0E79B2, 10%);
+$grey: #FBFEF5;
+$text-grey: lighten(black, 50%);
+
 body {
-  background-color: black;
+  background-color: $blue;
 }
 
 .container {
   width: 600px;
   margin: 25px auto;
   padding: 25px 3%;
-  background-color: white;
+  background-color: $grey;
 }
 
 form {
   display: flex;
   flex-direction: column;
+  background-color: white;
+  border: solid $blue 2px;
+  border-radius: 3px;
+  padding: 30px;
   label {
     margin: 3px 0;
+    color: $text-grey;
   }
   input, textarea {
     outline: none;
     border: solid 2px #E5E5E5;
   }
   input {
-    border-left: solid 4px black;
+    border-left: solid 4px $darkblue;
     height: 30px;
     padding: 0 5px;
   }
   textarea {
-    border-left: solid 4px black;
+    border-left: solid 4px $darkblue;
     height: 150px;
     margin-bottom: 5px;
+    padding: 5px 5px;
+    resize: none;
   }
   button {
     margin: 5px 0 0 0;
     width: 135px;
     height: 55px;
     color: white;
-    background-color: #88C470;
+    background-color: purple;
     border: none;
+    border-radius: 5px;
   }
 }
 
@@ -59,25 +72,26 @@ form {
 
 
 .messages {
-  border: solid black 1px;
   display: flex;
   flex-direction: column;
   list-style: none;
   width: 100%;
-  margin: 0;
   padding: 0;
   .message-item {
     border: solid black 1px;
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 100%;
     position: relative;
     margin: 10px auto;
+    border: solid 1px $blue;
     .info {
-      border: solid black 1px;
+      border: solid $darkblue 1px;
+      border-bottom: solid $darkblue 2px;
       display: flex;
       justify-content: space-between;
       font-size: 0.8em;
+      background-color: white;
     }
     .sender {
       display: flex;
@@ -87,7 +101,7 @@ form {
       margin: 0 2.5%;
       .t {
         margin: 5px 0;
-        color: lighten(black, 40%);
+        color: $text-grey;
       }
       .b {
         font-size: 1.2em;
@@ -110,7 +124,9 @@ form {
     .message {
       font-size: 0.8em;
       letter-spacing: 0.03em;
-      margin: 20px 2.5%;
+      margin: 0;
+      padding: 10px 10px;
+      background-color: white;
     }
 
     i {
