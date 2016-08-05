@@ -46,13 +46,14 @@ class Validate {
     };
 
     website(input) { 
+
+      var http = /^https?:\/\//i;
       if ( input === undefined) {
         input = false
-      } else if ( input.slice(0,7) !== "http://" ) {
-        input = false;
-      } else if ( input.slice(0,8) !== "https://" ) {
-        input = false;
+      } else {
+        input = http.test(input);
       }
+
       if ( input === false ) {
         // errored
         let website = $('.website-error');

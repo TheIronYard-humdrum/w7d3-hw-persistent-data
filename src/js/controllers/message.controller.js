@@ -1,22 +1,26 @@
 import { Validate } from '../Validator/validate';
 
-function MessageController ($scope, SERVER, $http) {
-  $scope.message = [];
+function MessageController ($scope, SERVER, $http, MessageService) {
+  $scope.messages = [];
 
   init();
 
   function init () {
-    $http.get(SERVER.URL).then( (res) => {
-      $scope.message = res.data;
+    MessageService.getMessages().then( (res) => {
+      $scope.messages = res.data;
+      console.log($scope.messages)
     });
   };
   
   function sendMessage (message) {
-    $http.post(SERVER.URL, message).then( (res) => {
-      $scope.message.push(res.data);
-      $scope.message = {};
-    }); 
+    MessageService.sendMessage(message).then( (res) => {
+      init();
+    })
   };
+
+  function deleteMessage(message) {
+    console.log(message)
+  }
 
   $scope.validateMessage = (original) => {
     let message;
@@ -35,6 +39,6 @@ function MessageController ($scope, SERVER, $http) {
   };
 };
 
-MessageController.$inject = ['$scope', 'SERVER', '$http'];
+MessageController.$inject = ['$scope', 'SERVER', '$http', 'MessageService'];
 
 export { MessageController };

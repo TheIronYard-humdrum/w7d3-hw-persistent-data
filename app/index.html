@@ -11,6 +11,9 @@
     <div ng-controller="MessageController" class="container">
       <form ng-submit="validateMessage(message)">
         <h2>Contact Us</h2>
+
+
+<!-- Name -->
         <label for="name">Name</label>
         <input 
             class="sender-error-border"
@@ -20,7 +23,7 @@
             placeholder="Sally Smith">
 
         <p class="red hidden sender-error">Name cannot be left empty</p>
-
+<!-- Email -->
         <label for="email">Email</label>
         <input 
             class="email-error-border" 
@@ -30,7 +33,7 @@
             placeholder="ssmith@gmail.com">
 
         <p class="red hidden email-error">Email must have an '@'</p>
-
+<!-- Website -->
         <label for="website">Website</label>
         <input 
           class="website-error-border" 
@@ -40,7 +43,7 @@
           placeholder="http://mssmith.net">
 
         <p class="red hidden website-error">Websites must start with http://</p>
-
+<!-- Message -->
         <label for="message">Message</label>
         <textarea 
             class="message-error-border" 
@@ -49,10 +52,37 @@
             type="text" 
             placeholder="A friendly message..."></textarea>
 
-        <p class="red hidden message-error">Message cannot be left empty</p>        
+        <p class="red hidden message-error">Message cannot be left empty</p>
 
         <button>Submit</button>
       </form>
+
+      <ul class="messages">
+        <li class="message-item" ng-repeat="message in messages">
+          <div class="info">
+<!-- Sender -->
+            <p class="sender">
+              <span class="l">Sender:</span>
+              <span class="r">{{message.name}}</span>
+            </p>
+<!-- Email -->
+            <p class="email">
+              <span class="l">Email:</span>
+              <span class="r">{{message.email}}</span>
+            </p>
+<!-- Website -->
+            <p class="website">
+              <span class="l">Website:</span>
+              <span class="r">{{message.website}}</span>
+            </p>
+          </div>
+<!-- Message -->
+          <p class="message">Message: {{message.message}}</p>
+          <form ng-submit="deleteMessage(message)">
+            <button>Delete</button>
+          </form>
+        </li>
+      </ul>
     </div>
     <script src="js/bundle.js"></script>
   </body>
